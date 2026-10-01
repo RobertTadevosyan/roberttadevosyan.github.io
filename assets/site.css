@@ -1,0 +1,47 @@
+/* Shared style for roberttadevosyan.github.io (plain CSS, no build step).
+   Colours, fonts and card style are the ones the home page has always used. */
+:root{--bg:#F4EBD9;--fg:#2B2622;--muted:#6E6357;--brass:#B8863B;--card:#FBF5E9;--line:rgba(43,38,34,.18)}
+@media (prefers-color-scheme:dark){:root{--bg:#1E1B18;--fg:#F4EBD9;--muted:#B9AE9F;--brass:#D2A24F;--card:#262220;--line:rgba(244,235,217,.16)}}
+body{font-family:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);max-width:760px;margin:0 auto;padding:32px 20px 64px;line-height:1.6}
+h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.01em}
+h1{font-size:2.2rem;margin:.1rem 0 0}
+h2{font-size:1.25rem;margin:0}
+.meta{color:var(--muted);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+.lead{color:var(--muted);margin:8px 0 28px}
+.app{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0}
+.app img{width:72px;height:72px;border-radius:18px;flex:none;background:var(--line)}
+.app p{margin:4px 0 8px}
+.app h2 a{color:inherit;text-decoration:none}
+.app h2 a:hover{text-decoration:underline;text-decoration-color:var(--brass)}
+.links a{display:inline-block;margin:4px 10px 0 0;padding:5px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem}
+.links a.store{background:var(--brass);color:#2B2622;border-color:var(--brass)}
+.links span{display:inline-block;margin:4px 10px 0 0;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;color:var(--muted);font-size:.92rem}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+a{color:var(--brass)}
+.beam{display:block;width:120px;height:44px;margin:8px 0 4px}
+
+/* Top bar: home link + English/Russian switch */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px}
+.top .home{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--fg);text-decoration:none}
+.langsw{display:flex;gap:6px}
+.langsw a{padding:3px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-size:.88rem;font-weight:700}
+.langsw a[aria-current="page"]{background:var(--brass);border-color:var(--brass);color:#2B2622}
+
+/* App landing pages */
+.hero{display:flex;gap:20px;align-items:center;margin:22px 0 10px}
+.hero img{width:96px;height:96px;border-radius:22px;flex:none;background:var(--line)}
+.hero h1{font-size:2rem;line-height:1.2}
+.page h2{margin:30px 0 6px}
+.page ul{padding-left:1.2em}
+.page li{margin:.35rem 0}
+.shots{display:flex;gap:12px;overflow-x:auto;margin:18px 0}
+.faq h3{font-family:"Nunito",sans-serif;font-size:1.05rem;font-weight:700;margin:18px 0 2px}
+.faq p{margin:0 0 6px}
+.back{margin-top:30px}
+@media (max-width:520px){
+  h1{font-size:1.8rem}
+  .hero{flex-direction:column;align-items:flex-start;gap:12px}
+  .hero h1{font-size:1.65rem}
+  .app{padding:14px}
+  .app img{width:56px;height:56px;border-radius:14px}
+}
