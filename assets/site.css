@@ -18,7 +18,9 @@ h2{font-size:1.25rem;margin:0}
 .links span{display:inline-block;margin:4px 10px 0 0;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;color:var(--muted);font-size:.92rem}
 footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
 a{color:var(--brass)}
-.beam{display:block;width:120px;height:44px;margin:8px 0 4px}
+.logo{display:block;width:64px;height:64px;margin:10px 0 6px;border-radius:15px}
+.top .back{display:inline-block;padding:5px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem}
+.top .back:hover{border-color:var(--brass)}
 
 /* Top bar: home link + English/Russian switch */
 .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px}
