@@ -1,49 +1,97 @@
 /* Shared style for roberttadevosyan.github.io (plain CSS, no build step).
-   Colours, fonts and card style are the ones the home page has always used. */
-:root{--bg:#F4EBD9;--fg:#2B2622;--muted:#6E6357;--brass:#B8863B;--card:#FBF5E9;--line:rgba(43,38,34,.18)}
-@media (prefers-color-scheme:dark){:root{--bg:#1E1B18;--fg:#F4EBD9;--muted:#B9AE9F;--brass:#D2A24F;--card:#262220;--line:rgba(244,235,217,.16)}}
-body{font-family:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);max-width:760px;margin:0 auto;padding:32px 20px 64px;line-height:1.6}
-h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.01em}
-h1{font-size:2.2rem;margin:.1rem 0 0}
-h2{font-size:1.25rem;margin:0}
-.meta{color:var(--muted);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
-.lead{color:var(--muted);margin:8px 0 28px}
-.app{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0}
-.app img{width:72px;height:72px;border-radius:18px;flex:none;background:var(--line)}
-.app p{margin:4px 0 8px}
-.app h2 a{color:inherit;text-decoration:none}
-.app h2 a:hover{text-decoration:underline;text-decoration-color:var(--brass)}
-.links a{display:inline-block;margin:4px 10px 0 0;padding:5px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem}
-.links a.store{background:var(--brass);color:#2B2622;border-color:var(--brass)}
-.links span{display:inline-block;margin:4px 10px 0 0;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;color:var(--muted);font-size:.92rem}
-footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+   Calm palette: misty white, soft mint and sea teal; deep teal-slate in dark mode. */
+:root{
+  --bg:#F4F8F7;--fg:#1D2B2E;--muted:#5D6F73;--brass:#2A9D8B;--accent-2:#7FB8E6;--on-accent:#fff;
+  --card:rgba(255,255,255,.72);--card-solid:#fff;--line:rgba(29,43,46,.09);
+  --shadow:0 1px 2px rgba(29,43,46,.04),0 8px 28px rgba(29,43,46,.07);
+  --shadow-hover:0 2px 4px rgba(29,43,46,.05),0 18px 44px rgba(29,43,46,.12);
+  --blob1:#BFE9DE;--blob2:#CFE2FA;--blob3:#FCE3D2;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0E1719;--fg:#E6F0EE;--muted:#98ADAA;--brass:#5ACFBB;--accent-2:#7FB8E6;--on-accent:#0E1719;
+  --card:rgba(255,255,255,.045);--card-solid:#152124;--line:rgba(230,240,238,.09);
+  --shadow:0 1px 2px rgba(0,0,0,.2),0 10px 30px rgba(0,0,0,.25);--shadow-hover:0 2px 4px rgba(0,0,0,.25),0 18px 48px rgba(0,0,0,.4);
+  --blob1:#123B36;--blob2:#14304A;--blob3:#3A2A22;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);max-width:880px;margin:0 auto;padding:28px 20px 64px;line-height:1.65;position:relative}
+body.home{max-width:1120px}
+h1,h2,h3{font-family:"Plus Jakarta Sans","Nunito",sans-serif;letter-spacing:-.015em}
+h1{font-size:2.4rem;font-weight:800;line-height:1.15;margin:.2rem 0 0}
+h2{font-size:1.2rem;font-weight:700;margin:0}
 a{color:var(--brass)}
-.logo{display:block;width:64px;height:64px;margin:10px 0 6px;border-radius:15px}
-.top .back{display:inline-block;padding:5px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem}
-.top .back:hover{border-color:var(--brass)}
+.meta{color:var(--muted);font-size:.82rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin:14px 0 0}
+.lead{color:var(--muted);font-size:1.08rem;margin:10px 0 30px;max-width:620px}
 
-/* Top bar: home link + English/Russian switch */
-.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px}
-.top .home{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--fg);text-decoration:none}
-.langsw{display:flex;gap:6px}
-.langsw a{padding:3px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-size:.88rem;font-weight:700}
-.langsw a[aria-current="page"]{background:var(--brass);border-color:var(--brass);color:#2B2622}
+/* Soft drifting background */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg i{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(70px);opacity:.75;animation:drift 38s ease-in-out infinite alternate}
+.bg i:nth-child(1){background:var(--blob1);top:-18vmax;left:-12vmax}
+.bg i:nth-child(2){background:var(--blob2);top:10vmax;right:-20vmax;animation-duration:46s;animation-delay:-12s}
+.bg i:nth-child(3){background:var(--blob3);bottom:-24vmax;left:18vmax;animation-duration:52s;animation-delay:-24s;opacity:.55}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(4vmax,3vmax) scale(1.08)}100%{transform:translate(-3vmax,5vmax) scale(.95)}}
+
+/* Top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+.top .home{font-family:"Plus Jakarta Sans","Nunito",sans-serif;font-weight:700;color:var(--fg);text-decoration:none}
+.top .back{display:inline-block;padding:6px 14px;background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.top .back:hover{transform:translateX(-2px);box-shadow:var(--shadow-hover)}
+.langsw{display:flex;gap:4px;padding:3px;background:var(--card);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.langsw a{padding:4px 12px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:.86rem;font-weight:700;transition:background .2s,color .2s}
+.langsw a[aria-current="page"]{background:var(--brass);color:var(--on-accent)}
+
+/* Home hero */
+.logo{display:block;width:72px;height:72px;margin:18px 0 4px;border-radius:18px;box-shadow:var(--shadow);animation:float 6s ease-in-out infinite}
+.logo .gear{transform-origin:32px 32px;animation:spin 24s linear infinite}
+@keyframes float{50%{transform:translateY(-5px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Home app grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{position:relative;display:flex;flex-direction:column;gap:10px;padding:20px;background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease;animation:rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 70ms + 120ms)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.card .head{display:flex;gap:14px;align-items:center}
+.card img{width:60px;height:60px;border-radius:16px;flex:none;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:rotate(-4deg) scale(1.06)}
+.card h2 a{color:inherit;text-decoration:none}
+.card h2 a::after{content:"";position:absolute;inset:0;border-radius:24px}
+.card p{margin:0;color:var(--muted);font-size:.98rem}
+.card .foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:.8rem;font-weight:700;text-decoration:none;background:color-mix(in srgb,var(--brass) 14%,transparent);color:var(--brass);transition:background .2s}
+a.chip:hover{background:color-mix(in srgb,var(--brass) 24%,transparent)}
+.chip.soon{background:transparent;border:1px dashed var(--line);color:var(--muted);font-weight:600}
+.more{font-size:.88rem;font-weight:700;color:var(--fg);opacity:.75;transition:transform .25s,opacity .25s}
+.card:hover .more{transform:translateX(3px);opacity:1}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Store buttons and pills (app pages) */
+.links a{display:inline-block;margin:4px 8px 0 0;padding:7px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem;background:var(--card);transition:transform .2s,box-shadow .2s}
+.links a:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.links a.store{background:var(--brass);color:var(--on-accent);border-color:var(--brass)}
+.links span{display:inline-block;margin:4px 8px 0 0;padding:7px 16px;border:1px dashed var(--line);border-radius:999px;color:var(--muted);font-size:.92rem}
+
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
 
 /* App landing pages */
-.hero{display:flex;gap:20px;align-items:center;margin:22px 0 10px}
-.hero img{width:96px;height:96px;border-radius:22px;flex:none;background:var(--line)}
+.hero{display:flex;gap:22px;align-items:center;margin:26px 0 10px;animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+.hero img{width:104px;height:104px;border-radius:26px;flex:none;box-shadow:var(--shadow-hover)}
 .hero h1{font-size:2rem;line-height:1.2}
-.page h2{margin:30px 0 6px}
+.page>section{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px;padding:6px 26px 22px;margin:22px 0;box-shadow:var(--shadow);animation:rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:.15s}
+.page h2{margin:22px 0 6px}
 .page ul{padding-left:1.2em}
 .page li{margin:.35rem 0}
 .shots{display:flex;gap:12px;overflow-x:auto;margin:18px 0}
-.faq h3{font-family:"Nunito",sans-serif;font-size:1.05rem;font-weight:700;margin:18px 0 2px}
+.faq h3{font-size:1.02rem;font-weight:700;margin:18px 0 2px}
 .faq p{margin:0 0 6px}
-.back{margin-top:30px}
-@media (max-width:520px){
-  h1{font-size:1.8rem}
+p.back{margin-top:30px}
+
+@media (max-width:560px){
+  h1{font-size:1.9rem}
   .hero{flex-direction:column;align-items:flex-start;gap:12px}
   .hero h1{font-size:1.65rem}
-  .app{padding:14px}
-  .app img{width:56px;height:56px;border-radius:14px}
+  .grid{grid-template-columns:1fr}
+  .page>section{padding:4px 18px 18px}
 }
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
