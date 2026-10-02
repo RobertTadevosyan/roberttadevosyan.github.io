@@ -144,4 +144,22 @@
     <loc>https://roberttadevosyan.github.io/privacy/com.robs_project.saleapp/</loc>
     <lastmod>2026-10-01</lastmod>
   </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/arrow-chefs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://roberttadevosyan.github.io/arrow-chefs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roberttadevosyan.github.io/ru/arrow-chefs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://roberttadevosyan.github.io/arrow-chefs/"/>
+  </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/ru/arrow-chefs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://roberttadevosyan.github.io/arrow-chefs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roberttadevosyan.github.io/ru/arrow-chefs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://roberttadevosyan.github.io/arrow-chefs/"/>
+  </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/privacy/am.game.arrowchefs/</loc>
+  </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/privacy/am.game.arrowchefs/support/</loc>
+  </url>
 </urlset>
