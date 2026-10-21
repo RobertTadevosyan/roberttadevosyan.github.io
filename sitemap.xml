@@ -162,4 +162,24 @@
   <url>
     <loc>https://roberttadevosyan.github.io/privacy/am.game.arrowchefs/support/</loc>
   </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/rak-na-gore/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://roberttadevosyan.github.io/rak-na-gore/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roberttadevosyan.github.io/ru/rak-na-gore/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://roberttadevosyan.github.io/rak-na-gore/"/>
+  </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/ru/rak-na-gore/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://roberttadevosyan.github.io/rak-na-gore/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://roberttadevosyan.github.io/ru/rak-na-gore/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://roberttadevosyan.github.io/rak-na-gore/"/>
+  </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/privacy/gore.rak.na/</loc>
+  </url>
+  <url>
+    <loc>https://roberttadevosyan.github.io/privacy/gore.rak.na/support/</loc>
+  </url>
 </urlset>
